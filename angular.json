@@ -94,6 +94,125 @@
         }
       }
     },
+    "emarket-admin": {
+      "projectType": "application",
+      "root": "apps/emarket-admin",
+      "sourceRoot": "apps/emarket-admin/src",
+      "prefix": "emarket",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/emarket-admin",
+            "index": "apps/emarket-admin/src/index.html",
+            "main": "apps/emarket-admin/src/main.ts",
+            "polyfills": "apps/emarket-admin/src/polyfills.ts",
+            "tsConfig": "apps/emarket-admin/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/emarket-admin/src/favicon.ico",
+              "apps/emarket-admin/src/assets"
+            ],
+            "styles": ["apps/emarket-admin/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/emarket-admin/src/environments/environment.ts",
+                  "with": "apps/emarket-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "emarket-admin:build:production"
+            },
+            "development": {
+              "browserTarget": "emarket-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "emarket-admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/emarket-admin/src/**/*.ts",
+              "apps/emarket-admin/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/emarket-admin"],
+          "options": {
+            "jestConfig": "apps/emarket-admin/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "emarket-admin-e2e": {
+      "root": "apps/emarket-admin-e2e",
+      "sourceRoot": "apps/emarket-admin-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/emarket-admin-e2e/cypress.json",
+            "tsConfig": "apps/emarket-admin-e2e/tsconfig.e2e.json",
+            "devServerTarget": "emarket-admin:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "emarket-admin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/emarket-admin-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "emarket-e2e": {
       "root": "apps/emarket-e2e",
       "sourceRoot": "apps/emarket-e2e/src",

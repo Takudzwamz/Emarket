@@ -30,6 +30,13 @@
     "emarket": {
       "tags": []
     },
+    "emarket-admin": {
+      "tags": []
+    },
+    "emarket-admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["emarket-admin"]
+    },
     "emarket-e2e": {
       "tags": [],
       "implicitDependencies": ["emarket"]
