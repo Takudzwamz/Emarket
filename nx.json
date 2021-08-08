@@ -40,6 +40,18 @@
     "emarket-e2e": {
       "tags": [],
       "implicitDependencies": ["emarket"]
+    },
+    "orders": {
+      "tags": []
+    },
+    "products": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    },
+    "users": {
+      "tags": []
     }
   }
 }
