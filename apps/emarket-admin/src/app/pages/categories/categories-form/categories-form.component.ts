@@ -53,7 +53,7 @@ export class CategoriesFormComponent implements OnInit {
     }
   }
 
-  onCancle() {
+  onCancel() {
     this.location.back();
   }
 

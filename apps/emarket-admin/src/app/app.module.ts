@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
+import { ProductsListComponent } from './pages/products/products-list/products-list.component';
+
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,7 +18,6 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
-
 import { InputTextModule } from 'primeng/inputtext';
 
 import { ToastModule } from 'primeng/toast';
@@ -24,6 +26,17 @@ import { MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { DropdownModule } from 'primeng/dropdown';
+import { EditorModule } from 'primeng/editor';
+import { UsersFormComponent } from './pages/users/users-form/users-form.component';
+import { UsersListComponent } from './pages/users/users-list/users-list.component';
+import { TagModule } from 'primeng/tag';
+import { InputMaskModule } from 'primeng/inputmask';
+
+
 
 const routes: Routes = [
   {
@@ -34,6 +47,22 @@ const routes: Routes = [
       { path: 'categories', component: CategoriesListComponent },
       { path: 'categories/form', component: CategoriesFormComponent },
       { path: 'categories/form/:id', component: CategoriesFormComponent },
+      { path: 'products', component: ProductsListComponent },
+      { path: 'products/form', component: ProductsFormComponent },
+      { path: 'products/form/:id', component: ProductsFormComponent },
+      ,
+      {
+        path: 'users',
+        component: UsersListComponent,
+      },
+      {
+        path: 'users/form',
+        component: UsersFormComponent,
+      },
+      {
+        path: 'users/form/:id',
+        component: UsersFormComponent,
+      },
     ],
   },
 ];
@@ -49,6 +78,13 @@ const UX_MODULE = [
   ToastModule,
   ConfirmDialogModule,
   ColorPickerModule,
+  InputNumberModule,
+  InputTextareaModule,
+  InputSwitchModule,
+  DropdownModule,
+  EditorModule,
+  TagModule,
+  InputMaskModule,
 ];
 
 @NgModule({
@@ -59,6 +95,11 @@ const UX_MODULE = [
     SidebarComponent,
     CategoriesListComponent,
     CategoriesFormComponent,
+    
+    ProductsFormComponent,
+    ProductsListComponent,
+    UsersFormComponent,
+    UsersListComponent,
 
   ],
   imports: [

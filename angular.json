@@ -114,8 +114,8 @@
               "apps/emarket-admin/src/favicon.ico",
               "apps/emarket-admin/src/assets"
             ],
-            "styles": ["apps/emarket-admin/src/styles.scss"],
-            "scripts": []
+            "styles": ["apps/emarket-admin/src/styles.scss", "node_modules/quill/dist/quill.core.css", "node_modules/quill/dist/quill.snow.css"],
+            "scripts": ["node_modules/quill/dist/quill.js"]
           },
           "configurations": {
             "production": {
